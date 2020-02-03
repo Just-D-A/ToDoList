@@ -13,7 +13,7 @@ public class DealFactory{
         return new DealImpl(description, projectName);
     }
 
-    public static Deal create(String description, String projectName, char priority) {
-        return new DealImpl(description, projectName, priority);
+    public static Deal create(String description,String status, String projectName, char priority) {
+        return new DealImpl(description, status, projectName, priority);
     }
 }

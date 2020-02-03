@@ -1,9 +1,7 @@
 package io;
 
 import domain.list.List;
-import io.command.Add;
-import io.command.Command;
-import io.command.Pri;
+import io.command.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,13 +9,20 @@ import java.util.HashMap;
 
 public class ConsoleReader{
     private HashMap<String, Command> commands;
+    private List list;
 
     public ConsoleReader(List list) {
+        this.list = list;
         commands = new HashMap<>();
-        //commands.put("command1", new Command1(list));
         commands.put("add", new Add(list));
         commands.put("pri", new Pri(list));
+        commands.put("ls", new Ls(list));
+        commands.put("lsp", new Lsp(list));
+        commands.put("do", new Do(list));
+        commands.put("cancel", new Cancel(list));
+        commands.put("change", new Change(list));
     }
+
     public void start() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String line;
@@ -50,6 +55,9 @@ public class ConsoleReader{
         } while (line != null);
     }
 
+    public List getLists() {
+        return list;
+    }
     private String[] parseArguments(String line) {
         return line.split(" ");
     }

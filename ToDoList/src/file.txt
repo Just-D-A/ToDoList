@@ -1,0 +1,5 @@
+InProcess B None in process1
+InProcess N +pro in process3 +pro
+Done C +pro in process2 +pro
+Done N None done deal
+Canceled A None cancel deal

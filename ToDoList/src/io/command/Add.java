@@ -30,14 +30,15 @@ public class Add extends Command{
                 }
 
             }
+            description = description.replaceAll('\"' + "", "");
             Deal deal;
             if (projectName.equals("")) {
                 deal = DealFactory.create(description);
             } else {
-                deal =DealFactory.create(description, projectName);
+                deal = DealFactory.create(description, projectName);
             }
             list.add(deal);
-            System.out.println("TODO: " + deal.getDescription() + " added on line " + list.getSize
+            System.out.println("TODO: '" + deal.getDescription() + "' added on line " + list.getSize
                     ());
         } else {
             throw new Exception("ERROR: incorrect description");
@@ -57,6 +58,7 @@ public class Add extends Command{
     private String findProjectName() {
         for (String argument : arguments) {
             if (getHead(argument) == '+') {
+                argument = argument.replaceAll('\"' + "", "");
                 return argument;
             }
         }
