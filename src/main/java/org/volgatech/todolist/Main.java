@@ -1,12 +1,12 @@
-package com.company;
+package org.volgatech.todolist;
 
-import app.file.MyFileWriter;
-import domain.deal.Deal;
-import domain.list.List;
-import io.ConsoleReader;
+import org.volgatech.todolist.app.file.MyFileWriter;
+import org.volgatech.todolist.domain.deal.Deal;
+import org.volgatech.todolist.domain.list.List;
+import org.volgatech.todolist.io.ConsoleReader;
 
 import java.io.File;
-import app.file.MyFileReader;
+import org.volgatech.todolist.app.file.MyFileReader;
 import java.util.ArrayList;
 
 public class Main {
