@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         ArrayList<Deal> list = new ArrayList<>();
-        File file = new File("file.txt");
+        File file = new File("./src/file.txt");
         MyFileReader fileReader = new MyFileReader(file);
         List toDoList = fileReader.readFile();
         ConsoleReader reader = new ConsoleReader(toDoList);
