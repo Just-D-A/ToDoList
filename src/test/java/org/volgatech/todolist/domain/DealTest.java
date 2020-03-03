@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DealTest {
     @Test
-    public void CreateDealWithOneArgument() {
+    public void testCreateDealWithOneArgument() {
 
         String dealDescription = "some description";
         Deal deal = DealFactory.create(dealDescription);
@@ -18,7 +18,7 @@ public class DealTest {
     }
 
     @Test
-    public void CreateDealWithTwoArguments() {
+    public void testCreateDealWithTwoArguments() {
         String dealDescription = "some description";
         String dealProjectName = "project";
         Deal deal = DealFactory.create(dealDescription, dealProjectName);
@@ -28,7 +28,7 @@ public class DealTest {
     }
 
     @Test
-    public void CreateDealWithThreeArguments() {
+    public void testCreateDealWithThreeArguments() {
         String dealDescription = "some description";
         String dealProjectName = "project";
         String dealStatus = "done";
@@ -40,7 +40,7 @@ public class DealTest {
     }
 
     @Test
-    public void ChangeDeal() {
+    public void testChangeDeal() {
         String dealDescription = "some description";
         char newDealPriority = 'A';
         String newDealStatus = "done";
