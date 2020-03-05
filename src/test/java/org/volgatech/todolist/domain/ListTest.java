@@ -39,7 +39,7 @@ public class ListTest {
     }
 
     @Test
-    public void AddDealToList() {
+    public void testAddDealToList() {
         String dealDescription = "some description";
         Deal deal = DealFactory.create(dealDescription);
         List list = ListFactory.create(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
@@ -49,7 +49,7 @@ public class ListTest {
     }
 
     @Test
-    public void RemoveDealFromList() {
+    public void testRemoveDealFromList() {
         String dealDescription = "some description";
         Deal deal = DealFactory.create(dealDescription);
         List list = ListFactory.create(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
@@ -60,7 +60,7 @@ public class ListTest {
     }
 
     @Test
-    public void ChangeDealInList() {
+    public void testChangeDealInList() {
         String dealDescription = "some description";
         String newDealDescription = "new description";
         Deal deal = DealFactory.create(dealDescription);
@@ -83,26 +83,27 @@ public class ListTest {
         list.cancelDeal(1);
         list.printLists();
         list.printPriList();
-        assertEquals("DONE:\n"
-                + "01 (N) 'some description'\n"
-                + "CANCELED:\n"
-                + "01 (N) 'some description'\n",
+        assertEquals("DONE:\r\n"
+                + "01 (N) 'some description'\r\n"
+                + "CANCELED:\r\n"
+                + "01 (N) 'some description'\r\n",
             outContent.toString());
+
     }
 
-    @Test void PrintProjectList() {
+    @Test void testPrintProjectList() {
         String dealDescription = "some description";
         String dealProjectName = "project";
         Deal deal = DealFactory.create(dealDescription, dealProjectName);
         List list = ListFactory.create(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         list.add(deal);
         list.printProjectList(dealProjectName);
-        assertEquals("01 (N) 'some description'\n", outContent.toString());
+        assertEquals("01 (N) 'some description'\r\n", outContent.toString());
     }
 
 
     @Test
-    public void DealGetters() {
+    public void testDealGetters() {
         String dealDescription = "some description\n";
         Deal deal = DealFactory.create(dealDescription);
         List list = ListFactory.create(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());

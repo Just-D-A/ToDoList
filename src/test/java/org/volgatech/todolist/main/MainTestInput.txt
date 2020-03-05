@@ -1,0 +1,7 @@
+add "deal 1"
+add "deal 2"
+pri 1 A
+cancel 1
+do 1
+ls
+lsp
